@@ -36,11 +36,35 @@
 //     }else {return false}
 //   }
 
-function getMiddle(s)
-{
-  if (s.length%2 !== 0){
-    return s[Math.ceil(s.length/2-1)]
-  }else {return s[s.length/2-1] + s[s.length/2]}
+// function getMiddle(s)
+// {
+//   if (s.length%2 !== 0){
+//     return s[Math.ceil(s.length/2-1)]
+//   }else {return s[s.length/2-1] + s[s.length/2]}
+// }
+
+// console.log(getMiddle("hiag"))
+
+
+function isIsogram(str) {
+
+    if (str !== "") {
+        i = 1;
+        for (let letter of str) {
+            lettersToCheck = str.substring(i).toLowerCase()
+            console.log(`the letter is ${letter} and the string to check is ${lettersToCheck}`)
+            if (lettersToCheck.includes(letter.toLowerCase())) {
+                return false
+            } else { i++ }
+        } return true;
+    } else {
+        return true
+    }
 }
 
-console.log(getMiddle("hiag"))
+
+console.log(isIsogram("Dermatoglyphics"))
+console.log(isIsogram("isogram"))
+console.log(isIsogram("aba"))
+console.log(isIsogram("moOse"))
+console.log(isIsogram("isIsogram"))
